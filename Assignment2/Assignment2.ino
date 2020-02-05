@@ -5,8 +5,8 @@
 #define LED D1
 
 bool buttonState;
-bool led = LOW;
-bool changed = LOW;
+bool clickedFlag = LOW;
+bool light = LOW;
 
 void setup() {
   //pin that has led is 01
@@ -18,26 +18,26 @@ void setup() {
 void loop() {
   //is the button pressed?
   buttonState = digitalRead(BUTTON);
-  
-  if (buttonState == LOW){
-    changed = LOW;
+
+  //if the button is clicked and it wasn't clicked previously
+  if (buttonState and not clickedFlag){
+    //set the clicked flag
+    clickedFlag = HIGH;
   }
+  //if the button is not clicked now and it was clicked previously (a completed
+  //click has now happened)
+  if (not buttonState and clickedFlag){
+    //set clicked flag
+    clickedFlag = LOW;
 
-   if (changed == LOW) {
-
-    //if the button is pressed and the light is off,
-    //turn light on and save its state
-    if (buttonState == HIGH && led == LOW){
+    //set the light
+    if (light == LOW){
       digitalWrite(LED, HIGH);
-      led = HIGH;
-      changed = HIGH;
+      light = HIGH;
     }
-    //if the button is pressed and the light is on,
-    //turn the light off and save its state
-    else if (buttonState == HIGH && led == HIGH){
+    else if (light == HIGH){
       digitalWrite(LED, LOW);
-      led = LOW;
-      changed = HIGH;
+      light = LOW;
     }
-   }
+  }
 }

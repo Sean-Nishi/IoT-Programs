@@ -1,14 +1,5 @@
 #Sean Nishi
 #python version of my Always Watching security software
-
-#TODO:
-#1. need to put classifiers in a directory, scan for them, put them in list
-#2. need to save video and after x-hours of recording, start new video, save old one, send old one to main computer
-#3. need to take picture whenever a new person comes into view, send to main computer
-#4. update database when we detect a new number of things we want to detect
-#5. expand program to incoporate more than one camera, if >1 camera then create a thread for each extra camera
-#6. need to add the commands for sending the pictures to google drive or something.
-
 from threading import Thread
 import cv2
 import datetime

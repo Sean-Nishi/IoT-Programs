@@ -1,7 +1,6 @@
 #Sean Nishi for IoT Final Project
 #original code came from miguel grinberg's blog
 #adapted and modified to always use opencv camera
-#always opens stream to 10.0.0.137:8000
 
 
 #!/usr/bin/env python
@@ -36,5 +35,5 @@ def video_feed():
 
 
 if __name__ == '__main__':
-    app.run(host='10.0.0.137',port = '8000', threaded=True)
+    app.run(host='',port = '', threaded=True)
 

@@ -16,4 +16,3 @@ pictures are saved in pics dir
 output.mp4 is saved recording at increased fps
 
 to view feed from browser, go into streaming dir and run 'python app.py'
-stream will be sent to 10.0.0.137:8000
